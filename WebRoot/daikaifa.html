@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery1.9.js"></script>
+<script type="text/javascript">
+var left=3;
+function goOut(){
+	left--;
+	$("#left").html(left);
+	if(left>0){
+		setTimeout('goOut();', 1000);
+	}else{
+		goBack();
+	}
+}
+
+function goBack(){
+	document.URL="index1.html";
+}
+</script>
+</head>
+
+<body onload="goOut();" scroll="no" style="width:100%;overflow:scroll;overflow-y:hidden;overflow-x:hidden;text-align:center;">
+<div class="body" >
+  <div class="logo"><img src="images/logo_03.png"  alt=""/></div>
+  <div class="neirong">
+    <div class="tishi">
+    <img src="images/cg_02.png"  alt=""/> </div>
+    <div class="wenzi3">系统将在<span style=" font-size:34px; color:#ff5500" id="left">5</span>秒后跳转，如长时间未反应，请<a href="javascript:goBack()" style="color:#068fd5;text-decoration:none">点击此处</a>。</div>
+  </div>
+</div>
+</body>
+</html>

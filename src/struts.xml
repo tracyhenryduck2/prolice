@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	<constant name="struts.action.extension" value="action" />
+	<include file="config/common-struts.xml"></include>
+	<include file="config/system-struts.xml"></include>
+	<include file="config/Police.xml"></include>
+	<include file="config/Note.xml"></include>
+	<include file="config/Notice.xml"></include>
+	<include file="config/app-struts.xml"></include>
+</struts>
