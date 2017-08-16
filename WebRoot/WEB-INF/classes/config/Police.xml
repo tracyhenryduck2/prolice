@@ -7,11 +7,23 @@
 	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" /> -->
 	<!--  <constant name="struts.devMode" value="false" /> -->
 	<package name="com.zt.police.action" extends="login.interceptor"
-		namespace="/police">
-<action name="Police" class="com.zt.police.action.PoliceAction">
-	 		<result name="toAddPolice">/admin/police_edit.jsp</result>
-	 		<result name="list">/admin/police_list.jsp</result>
-	 		<result name="search">/admin/police_search.jsp</result>
-</action>
+		namespace="/">
+		<action name="Police" class="com.zt.police.action.PoliceAction">
+			 		<result name="toAddPolice">/admin/police_edit.jsp</result>
+			 		<result name="list">/admin/police_list.jsp</result>
+			 		<result name="search">/admin/police_search.jsp</result>
+		</action>
+		<action name="Note" class="com.zt.police.action.NoteAction">
+			 		<result name="toAddNote">/admin/note_edit.jsp</result>
+			 		<result name="list">/admin/note_list.jsp</result>
+			 		<result name="search">/admin/note_search.jsp</result>
+		</action>
+		<action name="Notice" class="com.zt.police.action.NoticeAction">
+			 		<result name="toAddNotice">/admin/notice_edit.jsp</result>
+			 		<result name="list">/admin/notice_list.jsp</result>
+			 		<result name="search">/admin/notice_search.jsp</result>
+		</action>
+		
+
 	</package>
 </struts>

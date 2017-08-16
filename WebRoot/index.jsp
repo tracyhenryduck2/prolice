@@ -100,7 +100,7 @@ table{border-collapse:collapse;border-spacing:0;}
     </tr>
 </table>
 <script type="text/javascript">
-	$(function(){
+	/*$(function(){
 		$.ajax({                              
 			  data: "",         
 			  url: g_Path+"/system/OperateLogs!getOnlineCount.action", 
@@ -109,7 +109,7 @@ table{border-collapse:collapse;border-spacing:0;}
 				  $("#onlineCountId").html(msg);       
 			  }                                 
 		 });
-	});
+	});*/
 </script>
 </body>
 </html>

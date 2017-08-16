@@ -23,7 +23,7 @@ String path = request.getContextPath();
 			Dialog.error(message);				      
 		} else if (messageType == "reload_success") {   
 			Dialog.alert(message,function(){    
-				Dialog.opener().location.reload(); //;= "<%=path%>/police/Note!list.action";   
+				Dialog.opener().location.reload(); //;= "<%=path%>/Note!list.action";   
 				parentDialog.close();             
 			});                                 
 		} else if(messageType == "exception") { 
@@ -72,7 +72,7 @@ String path = request.getContextPath();
 </script>                                
 </head>                                  
 <body>                                   
-<form name="form1" id="form1" action="<%=path %>/police/Note!addNote.action" method="post" target="fram" >   
+<form name="form1" id="form1" action="<%=path %>/Note!addNote.action" method="post" target="fram" >   
 <input type="hidden" name="oper" value="${oper}" />
 <input type="hidden" name="noteBean.id" id="id" value="${noteBean.id }"/>  
 <table cellpadding="0" cellspacing="0" width="100%" class="GF-grid"> 

@@ -71,7 +71,7 @@ System.out.println(path);
 				'queueSizeLimit' : 1,
 				'auto'     :true,  
 				'swf'      : '<%=path%>/js/uploadify/uploadify.swf?pp=1',
-				'uploader' : '<%=request.getContextPath()%>/police/Police!importFile.action',
+				'uploader' : '<%=request.getContextPath()%>/Police!importFile.action',
 				'onUploadSuccess' : function(file, data, response) {
 					$("#pic").html("<img src='/photo/"+data+"' style='width:100px;height:100px;'/>");
 					$("#fileUrl").val(data);
@@ -84,7 +84,7 @@ System.out.println(path);
 	 	Dialog.confirm("确定删除附件吗？", function(){     
 		$.ajax({
 		 type :"post",
-		 url : '<%=request.getContextPath()%>/police/Police!removeFile.action',
+		 url : '<%=request.getContextPath()%>/Police!removeFile.action',
 				data : {
 					"fileName" : $("#fileUrl").val()
 				},
@@ -106,7 +106,7 @@ System.out.println(path);
 </script>                                
 </head>                                  
 <body>                                   
-<form name="form1" id="form1" action="<%=path %>/police/Police!addPolice.action" method="post" target="fram" >   
+<form name="form1" id="form1" action="<%=path %>/Police!addPolice.action" method="post" target="fram" >   
 <input type="hidden" name="oper" value="${oper}" />
 <input type="hidden" name="policeBean.id" id="id" value="${policeBean.id }"/>
 <input type="hidden" name="policeBean.password" id="password" value="${policeBean.password}"/>   

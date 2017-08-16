@@ -15,41 +15,7 @@
 		</action>
 		<action name="DownLoad" class="com.common.DownLoadAction"></action>
 	</package>
-	<package name="com.zt.police" namespace="/" 
-		extends="struts-default">
-		<action name="Police" 
-			class="com.zt.police.action.PoliceAction">
-			<result name="index">/jingmin.jsp</result>
-		</action>
-		<action name="Police" class="com.zt.police.action.PoliceAction">
-	 		<result name="toAddPolice">/admin/police_edit.jsp</result>
-	 		<result name="list">/admin/police_list.jsp</result>
-	 		<result name="search">/admin/police_search.jsp</result>
-</action>
-<action name="Note" class="com.zt.police.action.NoteAction">
-	 		<result name="toAddNote">/admin/note_edit.jsp</result>
-	 		<result name="list">/admin/note_list.jsp</result>
-	 		<result name="search">/admin/note_search.jsp</result>
-</action>
 
-
-		<!--  <action name="Note" class="com.zt.police.action.NoteAction">
-	 		<result name="toAddNote">/note_edit.jsp</result>
-	 		<result name="unReadList">/huifu.jsp</result>
-			<result type="redirect" name="my_error">
-				/tishibaocuo.html
-			</result>
-			<result type="redirect" name="success">
-				/tishi.html
-			</result>
-			<result type="redirect" name="add">
-				/Note!replyList.action
-			</result>
-			<result name="toAdd">/note.jsp</result>
-			<result name="allList">/equipment.jsp</result>
-			<result name="replyList">/im.jsp</result>
-		</action>-->
-	</package>
 	<package name="login.interceptor" extends="struts-default">
 		<interceptors>
 			<interceptor name="MyInterceptor"

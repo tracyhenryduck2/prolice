@@ -10,7 +10,5 @@
 	<include file="config/common-struts.xml"></include>
 	<include file="config/system-struts.xml"></include>
 	<include file="config/Police.xml"></include>
-	<include file="config/Note.xml"></include>
-	<include file="config/Notice.xml"></include>
 	<include file="config/app-struts.xml"></include>
 </struts>

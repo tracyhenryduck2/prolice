@@ -29,7 +29,7 @@ var editor1;
 			Dialog.error(message);				      
 		} else if (messageType == "reload_success") {   
 			Dialog.alert(message,function(){    
-				Dialog.opener().location.reload(); //;= "<%=path%>/police/Notice!list.action";   
+				Dialog.opener().location.reload(); //;= "<%=path%>/Notice!list.action";   
 				parentDialog.close();             
 			});                                 
 		} else if(messageType == "exception") { 
