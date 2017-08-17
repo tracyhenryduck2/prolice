@@ -14,13 +14,14 @@ System.out.println(path);
 <script type="text/javascript">        
  var isCommit=false 
 	function save(){      
-      
+      alert("save");  
 		if($("#form1").valid()) {           
         if(isCommit==false){   
          isCommit=true       
 			form1.submit();                     
       }                 
-		}                                     
+		}
+		alert("无效");                                     
 	}                                       
 	                                        
 	function result(messageType, message){  
@@ -74,7 +75,7 @@ System.out.println(path);
 				'uploader' : '<%=request.getContextPath()%>/Police!importFile.action',
 				'onUploadSuccess' : function(file, data, response) {
 					$("#pic").html("<img src='/photo/"+data+"' style='width:100px;height:100px;'/>");
-					$("#touxiang").val(data);
+					$("#fileUrl").val(data);
 			    }
 			});
 		},10);                                   
@@ -110,7 +111,6 @@ System.out.println(path);
 <input type="hidden" name="oper" value="${oper}" />
 <input type="hidden" name="policeBean.id" id="id" value="${policeBean.id }"/>
 <input type="hidden" name="policeBean.password" id="password" value="${policeBean.password}"/>   
-<span style="display:none;"><input type="hidden" name="policeBean.image" id="fileUrl" value="${policeBean.image }"/></span>
 <table cellpadding="0" cellspacing="0" width="100%" class="GF-grid"> 
   <tr>                                    
     	<td align="right" width="10%" > 
@@ -174,7 +174,7 @@ System.out.println(path);
 				
 	    	</s:if>
 	    </div>
-		<input type="text" disabled id="touxiang"  value="${policeBean.image}" class="GF-field"/>	
+		<input type="text" name="policeBean.image" id="fileUrl" value="${policeBean.image }" class="GF-field"/>	
     	<input type="button" value="删除" onclick="removeFile()" class="GF-btn" />
 		</td>                     
   </tr>                                 
