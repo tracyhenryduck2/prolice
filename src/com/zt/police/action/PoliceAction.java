@@ -54,7 +54,8 @@ public class PoliceAction extends BaseActionSupport {
                 //result = dao.updateu(policeBean.getId(),policeBean.getName(),policeBean.getCode(),policeBean.getPosition(),policeBean.getPhone(),policeBean.getImage()); 
               	result=dao.update(policeBean);
                
-            } else { 
+            } else {
+            	policeBean.setPassword("123456");
                 result = dao.insert(policeBean); 
             }
             if (result) {  

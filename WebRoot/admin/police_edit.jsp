@@ -14,14 +14,12 @@ System.out.println(path);
 <script type="text/javascript">        
  var isCommit=false 
 	function save(){      
-      alert("save");  
 		if($("#form1").valid()) {           
         if(isCommit==false){   
          isCommit=true       
 			form1.submit();                     
       }                 
-		}
-		alert("无效");                                     
+		}                                   
 	}                                       
 	                                        
 	function result(messageType, message){  
