@@ -74,7 +74,7 @@ System.out.println(path);
 				'uploader' : '<%=request.getContextPath()%>/Police!importFile.action',
 				'onUploadSuccess' : function(file, data, response) {
 					$("#pic").html("<img src='/photo/"+data+"' style='width:100px;height:100px;'/>");
-					$("#fileUrl").val(data);
+					$("#touxiang").val(data);
 			    }
 			});
 		},10);                                   
@@ -92,7 +92,7 @@ System.out.println(path);
 					if (data) {
 						$("#pic").html("");
 						Dialog.alert("删除成功！");
-						$("#fileUrl").val("");
+						$("#touxiang").val("");
 					} else {
 						Dialog.alert("删除失败！");
 					}
@@ -174,7 +174,7 @@ System.out.println(path);
 				
 	    	</s:if>
 	    </div>
-		<input type="text" disabled id="phone"  value="${policeBean.image}" class="GF-field"/>	
+		<input type="text" disabled id="touxiang"  value="${policeBean.image}" class="GF-field"/>	
     	<input type="button" value="删除" onclick="removeFile()" class="GF-btn" />
 		</td>                     
   </tr>                                 
