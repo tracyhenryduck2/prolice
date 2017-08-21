@@ -5,12 +5,12 @@
 		<name>write</name>
 		<driver-class>com.mysql.jdbc.Driver</driver-class>
 		  
+		<!--<driver-url>jdbc:mysql://112.33.1.143:3306/police?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
+		<user>root</user>
+		<password>zhouxin</password>-->
 		<driver-url>jdbc:mysql://127.0.0.1:3306/police?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
 		<user>root</user>
-		<password></password>
-		<!--<driver-url>jdbc:mysql://zed1.cn:3306/police?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
-		<user>root</user>
-		<password>zhetian@12378900</password>-->
+		<password>123456</password>
 		<show-sql>true</show-sql>
 		<!-- 连接池中允许创建的最大的数据库物理连接数量，默认 100 -->
 		<max-connection-size>100</max-connection-size>

@@ -34,7 +34,7 @@ public class DownLoadAction extends BaseActionSupport {
 	private String getUploadPath1(){
     	if(uploadPath1==null){
     		File file=new File(request.getSession().getServletContext().getRealPath(""));
-    		uploadPath1=file.getParentFile().getAbsolutePath()+"/upload/";
+    		uploadPath1=file.getParentFile().getAbsolutePath()+"/notice_file/";
     	}
     	return uploadPath1;
     }

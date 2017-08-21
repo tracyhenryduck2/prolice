@@ -152,8 +152,14 @@ public class IndexAction extends BaseActionSupport {
 			public void run() {
 				String police_phone =policeBean.getPhone();
 				try{
-				MsgTool.sendMsg(phone,"平安桃源","SMS_6940101","{\"name\":\""+noteBean.getName()+"\",\"note\":\""+noteBean.getContent()+"\"}");
-				MsgTool.sendMsg(police_phone,"平安桃源","SMS_6935131","{\"name\":\""+noteBean.getName()+"\",\"note\":\""+noteBean.getContent()+"\"}");
+					String dsa = "";
+				    if(noteBean.getContent().length()>15){
+				    	dsa = noteBean.getContent().substring(0,13)+"..";
+				    }else {
+				    	dsa = noteBean.getContent();
+				    }
+				MsgTool.sendMsg(phone,"平安桃源","SMS_6940101","{\"name\":\""+noteBean.getName()+"\",\"note\":\""+dsa+"\"}");
+				MsgTool.sendMsg(police_phone,"平安桃源","SMS_6935131","{\"name\":\""+noteBean.getName()+"\",\"note\":\""+dsa+"\"}");
 	    		}
 	    		catch(Exception e)
 	    		{

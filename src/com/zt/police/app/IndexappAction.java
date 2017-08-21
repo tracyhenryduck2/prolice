@@ -174,7 +174,7 @@ public class IndexappAction extends BaseActionSupport {
 	     * */
 	    public void replay(){
 
-	    	
+	    	boolean length_is_ok = false;
 	    	final String NoteId= request.getParameter("noteid");
 	    	final String Name= request.getParameter("name");
 	    	String Phone = request.getParameter("notephone");
@@ -185,44 +185,66 @@ public class IndexappAction extends BaseActionSupport {
       	
 	    	final String[] phones= new String[1];
 			phones[0] =Phone;
-//			byte[] srtbyte = Msg1.getBytes();
-//           final String Msg=Base64.encode(srtbyte);
+    		byte[] srtbyte = Base64.decode(Msg);
+    		String Msg2 ="";
+   		 try {
+			Msg2 = new String(srtbyte,"UTF-8");
+			if(Msg2.length()<=15){
+				length_is_ok = true;
+			}
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	    	
-	        boolean result = new Transaction() {
-				public void run() {
-					try{
+		   if(length_is_ok){
+		        boolean result = new Transaction() {
+					public void run() {
+						try{
+							
 						
-					
-			    		byte[] srtbyte = Base64.decode(Msg);
-			    		
-			    		 
-			    		 String Msg2 = new String(srtbyte,"UTF-8");
-						//OpenMasClient.sendMsg(phones, "姓名："+Name +" 留言内容："+Msg);
-						MsgTool.sendMsg(phones[0],"平安桃源","SMS_6935131","{\"name\":\""+Name+"\",\"note\":\""+Msg2+"\"}");
-						notedao.replay(NoteId,Msg,date);
-						notedao.replay2(NoteId,Msg,date);
-					}
-					catch(Exception e)
-		    		{
-		    			e.printStackTrace();
-		    		}
-					
+				    		byte[] srtbyte = Base64.decode(Msg);
+				    		
+				    		 
+				    		 String Msg2 = new String(srtbyte,"UTF-8");
+				    		 String Msg3 = "";
+				    		 if(Msg2.length()>15){
+				    			 Msg3 = Msg2.substring(0,13)+"..";
+				    		 }else{
+				    			 Msg3 = Msg2;
+				    		 }
+							//OpenMasClient.sendMsg(phones, "姓名："+Name +" 留言内容："+Msg);
+							MsgTool.sendMsg(phones[0],"平安桃源","SMS_7265416","{\"name\":\""+Name+"\",\"note\":\""+Msg3+"\"}");
+							notedao.replay(NoteId,Msg,date);
+							notedao.replay2(NoteId,Msg,date);
+						}
+						catch(Exception e)
+			    		{
+			    			e.printStackTrace();
+			    		}
+						
 
-				}
-	        }.start();
-	        Map<String,Object> map = new HashMap<String,Object>();
-	        if(result){
-	        	map.put("result", "1");
-		        map.put("submit_time", date);
-	        }
-	        else{
-	        	map.put("result", "0");
-	        }	
+					}
+		        }.start();
+		        Map<String,Object> map = new HashMap<String,Object>();
+		        if(result){
+		        	map.put("result", "1");
+			        map.put("submit_time", date);
+		        }
+		        else{
+		        	map.put("result", "0");
+		        }	
+
+		    	 outPrintJSONObject(map);
+		   }else{
+			   Map<String,Object> map = new HashMap<String,Object>();
+			   map.put("result", "0");
+		    	outPrintJSONObject(map);
+		   }
+		
+
 	        
 
-	    	
-
-	    	 outPrintJSONObject(map);
 	    	
 	    }
 	    
