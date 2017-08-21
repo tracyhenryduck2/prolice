@@ -157,7 +157,11 @@ public class NoticeAction extends BaseActionSupport {
     
     private String getUploadPath() {
     	File file=new File(request.getSession().getServletContext().getRealPath(""));
-		return file.getParentFile().getAbsolutePath()+"/upload/";
+    	File tmpFile = new File(file.getParentFile().getAbsolutePath()+"/notice_file/");
+    	if(!tmpFile.exists()) {
+    		tmpFile.mkdirs();
+    	}
+		return file.getParentFile().getAbsolutePath()+"/notice_file/";
 	}
 
 	public void removeFile() throws IOException{
