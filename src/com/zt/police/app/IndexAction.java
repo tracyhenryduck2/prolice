@@ -18,6 +18,8 @@ import com.zt.police.dao.PoliceDAO;
 import com.common.BaseActionSupport;
 import com.common.DataUtils;
 import com.common.OpenMasClient;
+import com.common.SendMail;
+import com.common.StaticBean;
 import com.common.Transaction;
 import com.common.MsgTool;
 
@@ -165,6 +167,7 @@ public class IndexAction extends BaseActionSupport {
 	    		{
 	    			e.printStackTrace();
 	    		}
+	    		SendMail.sendAndCc(StaticBean.STMP_SERVER,StaticBean.STMP_FROM, policeBean.getEmail(), "", "您收到一条"+noteBean.getName()+"的留言", noteBean.getContent(), StaticBean.STMP_FROM, StaticBean.MM,null);
 	    		indexdao.save(noteBean); 
 			}
         }.start();

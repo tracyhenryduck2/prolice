@@ -64,6 +64,7 @@ String path = request.getContextPath();
 			     this.innerDoc.getElementById("position").value = $("#position").val();
 			     this.innerDoc.getElementById("phone").value = $("#phone").val();
 			     this.innerDoc.getElementById("image").value = $("#image").val();
+			     this.innerDoc.getElementById("email").value = $("#email").val();
            }
 			});    
 		}      
@@ -88,6 +89,7 @@ String path = request.getContextPath();
 			<input type="hidden" name="policeBean.position" id="position" value="${policeBean.position}"/> 
 			<input type="hidden" name="policeBean.phone" id="phone" value="${policeBean.phone}"/> 
 			<input type="hidden" name="policeBean.image" id="image" value="${policeBean.image}"/> 
+			<input type="hidden" name="policeBean.email" id="position" value="${policeBean.email}"/> 
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -101,7 +103,8 @@ String path = request.getContextPath();
 			   			<th sortname="position" width="20%">职位</th>	   
 			   			<th sortname="phone" width="20%">手机号</th>	   
 			   			<th sortname="image" width="20%"></th>
-			   			<th sortname="dep_name" width="20%">所属部门</th>	   	   
+			   			<th sortname="dep_name" width="20%">所属部门</th>
+			   			<th sortname="email" width="20%">邮箱</th>		   	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
@@ -113,7 +116,8 @@ String path = request.getContextPath();
 		   			 	 <td>${map.position}</td>    
 		   			 	 <td>${map.phone}</td>    
 		   			 	 <td>${map.image}</td>
-		   			 	 <td>${map.dep_name}</td>     
+		   			 	 <td>${map.dep_name}</td>
+		   			 	<td>${map.email}</td>          
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

@@ -64,6 +64,12 @@ public class PoliceBean {
 	*/
 	@Column(name="password")
 	private String password;
+  
+	/**
+	 * 密码 
+	*/
+	@Column(name="email")
+	private String email;
     	
     /** 
      * 
@@ -208,4 +214,14 @@ public class PoliceBean {
     public void setPassword(String password) {
     	this.password = password;
     }
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+    
+    
 }

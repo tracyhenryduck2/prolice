@@ -53,7 +53,10 @@ System.out.println(path);
 			    },                              
 			    "policeBean.image":{            
 			        required : true,CNRangeLength:[0,255]
-			    },                           
+			    },  			  
+			      "policeBean.email":{            
+			        required : true,CNRangeLength:[0,255]
+			    },                          
 			},                                  
 			messages:{                          
 //			    "policeBean.code":{          
@@ -150,7 +153,14 @@ System.out.println(path);
             <input type="text" name="policeBean.phone" id="phone"  value="${policeBean.phone}" class="GF-field"/>   
         </td>                            
   </tr>                                
-                                      
+        <tr>                                    
+    	<td align="right" > 
+                           邮箱<span class="mark">*</span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="policeBean.email" id="email"  value="${policeBean.email}" class="GF-field"/>   
+        </td>                            
+  </tr>                                 
   <tr id="upload_pic">  
   		<td align="right">上传警员照片</td>                                     
     	<td><input type="file" name="file" id="file" /><br/>建议图片格式jpg,png,gif</td>                     

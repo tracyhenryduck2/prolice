@@ -238,14 +238,14 @@ public class SendMail {
 	    }  
 	    
 	    public static void main(String[] args){  
-	    	String smtp = "smtp.163.com";  
-		    String from = "nitianweiba@163.com";  
-		    String to = "1148048737@qq.com";  
-		    String copyto = "1148048737@qq.com";  
-		    String subject = "邮件主题";  
-		    String content = "邮件内容";  
-		    String username="nitianweiba@163.com";  
-		    String password="cyaiqq19891120"; 
+	    	String smtp = "smtp.sina.com";  
+		    String from = "duckstime@sina.com";  
+		    String to = "546342804@qq.com";  
+		    String copyto = "";  
+		    String subject = "收到一条报警消息";  
+		    String content = "收到一条报警消息";  
+		    String username="duckstime@sina.com";  
+		    String password="tracy1219henry"; 
 		    SendMail.sendAndCc(smtp, from, to, copyto, subject, content, username, password,null); 
 	    }  
 }

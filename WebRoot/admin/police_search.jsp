@@ -14,6 +14,7 @@ String path = request.getContextPath();
 			Dialog.opener().document.getElementById("position").value = $("#position").val()||"";    
 			Dialog.opener().document.getElementById("phone").value = $("#phone").val()||"";    
 			Dialog.opener().document.getElementById("image").value = $("#image").val()||"";    
+			Dialog.opener().document.getElementById("email").value = $("#email").val()||"";    
 			Dialog.opener().document.form1.submit();                     
 			ownerDialog.close();
 	}                                       
@@ -37,7 +38,10 @@ String path = request.getContextPath();
 			    },                              
 			    "policeBean.image":{            
 			        CNRangeLength:[0,30]
-			    }                              
+			    },   
+			    "policeBean.email":{            
+			        CNRangeLength:[0,45]
+			    }                           
 			},                                  
 			messages:{                          
 //			    "policeBean.code":{          
@@ -91,7 +95,15 @@ String path = request.getContextPath();
         <td>                             
             <input type="text" name="policeBean.image" id="image"  value="${policeBean.image}" class="GF-field"/>   
         </td>                            
-  </tr>                                
+  </tr>
+    <tr>                                    
+    	<td align="right" width="30%" > 
+                            <span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="policeBean.email" id="email"  value="${policeBean.email}" class="GF-field"/>   
+        </td>                            
+  </tr>                                  
   <tr>                                
       <td>&nbsp;</td>		
       <td><input type="button" name="查询" value="查询" onclick="search();" class="GF-btn"/></td>		

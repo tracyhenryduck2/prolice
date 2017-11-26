@@ -44,7 +44,11 @@ public class PoliceDAO extends BaseDAO {
     		if(policeBean.getPhone() != null && policeBean.getPhone().trim().length()>0) { 
     			objectList.add(policeBean.getPhone());
     			sqlWhere += " AND a.phone = ? ";
-    		} 
+    		}    		
+    		if(policeBean.getEmail() != null && policeBean.getEmail().trim().length()>0) { 
+    			objectList.add(policeBean.getEmail());
+    			sqlWhere += " AND a.email = ? ";
+    		}  
     	}             
     	sql = sql + sqlWhere; 
     	Object[] pram = objectList.toArray(); 
