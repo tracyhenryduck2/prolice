@@ -81,7 +81,10 @@ public class SendMail {
 	        System.out.println("设置smtp身份认证：mail.smtp.auth = "+need);   
 	        if(props == null) props = System.getProperties();   
 	        if(need){   
-	            props.put("mail.smtp.auth","true");   
+	            props.put("mail.smtp.auth","true");  
+	            props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+	            props.put("mail.smtp.port", "465");
+	            props.put("mail.smtp.socketFactory.port", "465");
 	        }else{   
 	            props.put("mail.smtp.auth","false");   
 	        }   
@@ -121,7 +124,7 @@ public class SendMail {
 	    public boolean setBody(String mailBody) {   
 	        try{   
 	            BodyPart bp = new MimeBodyPart();   
-	            bp.setContent(""+mailBody,"text/html;charset=GBK");   
+	            bp.setContent(""+mailBody,"text/html;charset=utf-8");   
 	            mp.addBodyPart(bp);   
 	          
 	            return true;   
@@ -238,14 +241,15 @@ public class SendMail {
 	    }  
 	    
 	    public static void main(String[] args){  
-	    	String smtp = "smtp.sina.com";  
-		    String from = "duckstime@sina.com";  
-		    String to = "546342804@qq.com";  
+	    	String smtp = "smtp.qq.com";  
+		    String from = "546342804@qq.com";  
+		    String to = "1055184273@qq.com";  
 		    String copyto = "";  
-		    String subject = "收到一条报警消息";  
-		    String content = "收到一条报警消息";  
-		    String username="duckstime@sina.com";  
-		    String password="tracy1219henry"; 
-		    SendMail.sendAndCc(smtp, from, to, copyto, subject, content, username, password,null); 
+		    String subject = "gfg";      
+		     String demo = "dsd";  
+
+		    String username="546342804@qq.com";  
+		    String password="ojiczyuvetshbfhh"; 
+		    SendMail.sendAndCc(smtp, from, to, copyto, subject, demo, username, password,null); 
 	    }  
 }
